@@ -5,11 +5,11 @@ export PATH
 #=================================================
 #	System Required: CentOS/Debian/Ubuntu
 #	Description: Aria2
-#	Version: 1.1.6
+#	Version: 1.1.5
 #	Author: Toyo
 #	Blog: https://doub.io/shell-jc4/
 #=================================================
-sh_ver="1.1.6"
+sh_ver="1.1.5"
 filepath=$(cd "$(dirname "$0")"; pwd)
 file_1=$(echo -e "${filepath}"|awk -F "$0" '{print $1}')
 file="/root/.aria2"
@@ -77,11 +77,7 @@ check_new_ver(){
 }
 Download_aria2(){
 	cd "/usr/local"
-	echo -e "${bit}"
-	if [[ ${bit} == "armv7l" ]]; then
-		wget -N --no-check-certificate "https://github.com/q3aql/aria2-static-builds/releases/download/v${aria2_new_ver}/aria2-${aria2_new_ver}-linux-gnu-arm-rbpi-build1.tar.bz2"
-		Aria2_Name="aria2-${aria2_new_ver}-linux-gnu-arm-rbpi-build1"
-	elif [[ ${bit} == "x86_64" ]]; then
+	if [[ ${bit} == "x86_64" ]]; then
 		wget -N --no-check-certificate "https://github.com/q3aql/aria2-static-builds/releases/download/v${aria2_new_ver}/aria2-${aria2_new_ver}-linux-gnu-64bit-build1.tar.bz2"
 		Aria2_Name="aria2-${aria2_new_ver}-linux-gnu-64bit-build1"
 	else
